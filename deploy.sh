@@ -2,7 +2,7 @@
 # docker build -t kostyaurysov/sample-node .
 docker push fred14/sample-node
 
-ssh key kouakam@35.187.12.218 << EOF
+ssh key kouakam@35.187.21.218 << EOF
 docker pull fred14/sample-node:latest
 docker stop web || true
 docker rm web || true
