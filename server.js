@@ -4,7 +4,7 @@ var express = require("express");
 
 express()
  .get("*", function(req, res) {
-    res.send("ok!");
+    res.send("continuious integraton and deployment la finished");
  })
  .listen(80, function(err) {
     if (err) {

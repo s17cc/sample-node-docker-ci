@@ -9,11 +9,12 @@ dependencies:
 test:
   override:
     - docker run fred14/sample-node npm test
-    
+
 deployment:
   production:
-    branch: master
+    branch: failing-branch
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - chmod +x deploy.sh
       - ./deploy.sh
 
