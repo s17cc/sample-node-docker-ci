@@ -1,7 +1,7 @@
 #!/bin/bash
 docker build -t fred14/sample-node .
 docker push fred14/sample-node
-ssh -i key kouakam@35.187.21.218 << EOF
+ssh kouakam@104.155.64.132 << EOF
 docker pull fred14/sample-node:latest
 docker stop web || true
 docker rm web || true
