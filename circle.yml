@@ -10,7 +10,6 @@ test:
   override:
     - docker run fred14/sample-node npm test
 
-
 deployment:
   production:
     branch: master
