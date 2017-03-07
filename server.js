@@ -6,6 +6,7 @@ express()
  .get("*", function(req, res) {
     db("users").then(function(data) {
       res.send(data);
+      res.send("Lab 7 completed")
     });
  })
  .listen(80, function(err) {

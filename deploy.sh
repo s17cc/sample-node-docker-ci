@@ -2,7 +2,7 @@
 docker build -t mboronin/sample-node .
 docker push mboronin/sample-node
 
-ssh deploy@35.187.91.220 << EOF
+ssh -i deploy deploy@35.187.91.220 << EOF
 docker pull mboronin/sample-node:latest
 docker stop web || true
 docker rm web || true
