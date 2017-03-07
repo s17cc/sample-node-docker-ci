@@ -1,12 +1,12 @@
 #!/bin/bash
-docker build -t kostyaurysov/sample-node .
-docker push kostyaurysov/sample-node
+docker build -t mboronin/sample-node .
+docker push mboronin/sample-node
 
-ssh deploy@35.187.30.81 << EOF
-docker pull kostyaurysov/sample-node:latest
+ssh deploy@35.187.91.220 << EOF
+docker pull mboronin/sample-node:latest
 docker stop web || true
 docker rm web || true
-docker rmi kostyaurysov/sample-node:current || true
-docker tag kostyaurysov/sample-node:latest kostyaurysov/sample-node:current
-docker run -d --net app --restart always --name web -p 80:80 kostyaurysov/sample-node:current
+docker rmi mboronin/sample-node:current || true
+docker tag mboronin/sample-node:latest mboronin/sample-node:current
+docker run -d --net app --restart always --name web -p 80:80 mboronin/sample-node:current
 EOF
