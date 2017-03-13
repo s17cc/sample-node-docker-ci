@@ -1,12 +1,11 @@
 #!/bin/bash
-docker build -t kostyaurysov/sample-node .
-docker push kostyaurysov/sample-node
+#docker build -t asverasver/sample-node .
+#docker push asverasver/sample-node
 
-ssh deploy@35.187.30.81 << EOF
-docker pull kostyaurysov/sample-node:latest
+ssh deploy@104.198.161.225
+docker pull asverasver/sample-node:latest
 docker stop web || true
 docker rm web || true
-docker rmi kostyaurysov/sample-node:current || true
-docker tag kostyaurysov/sample-node:latest kostyaurysov/sample-node:current
-docker run -d --net app --restart always --name web -p 80:80 kostyaurysov/sample-node:current
-EOF
+docker rmi asverasver/sample-node:current || true
+docker tag asverasver/sample-node:latest asverasver/sample-node:current
+docker run -d --net lab6net --restart always --name web -p 80:80 asverasver/sample-node:current
