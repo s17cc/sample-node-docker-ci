@@ -2,7 +2,7 @@
 docker build -t zytfo/cont_image .
 docker push zytfo/cont_image
 
-ssh innostepanova@35.195.42.3 << EOF
+ssh innostepanova@35.198.81.139 << EOF
 docker pull zytfo/cont_image:latest
 docker stop web || true
 docker rm web || true
