@@ -1,12 +1,12 @@
 #!/bin/bash
-docker build -t kostyaurysov/sample-node .
-docker push kostyaurysov/sample-node
+docker build -t zytfo/cont_image .
+docker push zytfo/cont_image
 
-ssh deploy@35.187.30.81 << EOF
-docker pull kostyaurysov/sample-node:latest
+ssh innostepanova@35.198.81.139 << EOF
+docker pull zytfo/cont_image:latest
 docker stop web || true
 docker rm web || true
-docker rmi kostyaurysov/sample-node:current || true
-docker tag kostyaurysov/sample-node:latest kostyaurysov/sample-node:current
-docker run -d --net app --restart always --name web -p 80:80 kostyaurysov/sample-node:current
+docker rmi zytfo/cont_image:current || true
+docker tag zytfo/cont_image:latest zytfo/cont_image:current
+docker run -d --restart always --name web -p 80:80 zytfo/cont_image:current
 EOF
