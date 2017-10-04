@@ -4,11 +4,11 @@ machine:
 
 dependencies:
   override:
-    - docker build -t zytfo/sample-node .
+    - docker build -t zytfo/cont_image .
 
 test:
   override:
-    - docker run zytfo/sample-node npm test
+    - docker run zytfo/cont_image npm test
 
 deployment:
   production:
