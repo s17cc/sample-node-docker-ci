@@ -8,5 +8,5 @@ docker stop web || true
 docker rm web || true
 docker rmi zytfo/cont_image:current || true
 docker tag zytfo/cont_image:latest zytfo/cont_image:current
-docker run -d --net app --restart always --name web -p 80:80 zytfo/cont_image:current
+docker run -d --restart always --name web -p 80:80 zytfo/cont_image:current
 EOF
