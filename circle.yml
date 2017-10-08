@@ -4,9 +4,9 @@ machine:
 
 dependencies:
   override:
-    - docker build -t kostyaurysov/sample-node .
+    - docker build -t borisqa/sample-node .
 
 test:
   override:
-    - docker run kostyaurysov/sample-node npm test
+    - docker run borisqa/sample-node npm test
 
