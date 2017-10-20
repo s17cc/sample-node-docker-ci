@@ -4,11 +4,11 @@ machine:
 
 dependencies:
   override:
-    - docker build -t kostyaurysov/sample-node .
+    - docker build -t kkhanda/sample-node .
 
 test:
   override:
-    - docker run kostyaurysov/sample-node npm test
+    - docker run kkhanda/sample-node npm test
 
 deployment:
   production:
